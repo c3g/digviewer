@@ -1,0 +1,67 @@
+.background {
+    fill: #fff;
+}
+
+.cell_border {
+    stroke:#aaa;
+    stroke-width:1;
+    stroke-opacity:1;
+}
+
+text.active {
+  fill: red;
+}
+
+.column text {
+	fill: black;
+}
+.column text.active {
+	fill: red;
+}
+
+.cell {
+  cursor: pointer;
+}
+
+.cell.active rect {
+  fill: #002EB8 !important;
+}
+
+.cell.active text {
+  font-weight: bold;
+  fill: white;
+}
+
+.ctext {
+  cursor: pointer;
+    x: 5;
+}
+
+.rtext {
+  cursor: pointer;
+}
+
+.column_category {
+  cursor: pointer;
+}
+
+#noDatasetsMessageDiv {
+	text-align: center;
+	background-color: white;
+	display: table;
+	width: 50%;
+    margin: 0 auto;
+}
+
+#noDatasetsMessageSpan {
+	display: table-cell;
+	vertical-align: middle;
+}
+text{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
