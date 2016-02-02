@@ -109,7 +109,6 @@ var DIGViewer = function(containerDiv, userSettings) {
      * @param {Array} column_category_objects
      */
     this.drawGrid = function(data, row_objects, column_objects, color_objects, column_category_objects) {
-        console.log(data.length);
         that.datasetsObj = that._convertData(data);
         that.row_objects = row_objects;
         that.column_objects = column_objects;
