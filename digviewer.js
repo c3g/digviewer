@@ -93,6 +93,7 @@ var DIGViewer = function(containerDiv, userSettings) {
     this.matrixHeight = 0;
 
     this.reductionFactor = 0;
+    this.initialGridFontSize = 1;      //default font size in em
     this.gridFontSize = 1;      //default font size in em
 
 
@@ -108,6 +109,7 @@ var DIGViewer = function(containerDiv, userSettings) {
      * @param {Array} column_category_objects
      */
     this.drawGrid = function(data, row_objects, column_objects, color_objects, column_category_objects) {
+        console.log(data.length);
         that.datasetsObj = that._convertData(data);
         that.row_objects = row_objects;
         that.column_objects = column_objects;
@@ -115,7 +117,7 @@ var DIGViewer = function(containerDiv, userSettings) {
         that.column_category_objects = column_category_objects;
 
         //If there's no datasets, just show a text that says so
-        if (that.datasetsObj.length === 0) {
+        if (data.length === 0) {
             that._drawEmptyDatasetMessage();
             that.onGridLoaded();
             return;
@@ -135,7 +137,7 @@ var DIGViewer = function(containerDiv, userSettings) {
         }
 
         that.reductionFactor = Math.round(that.widthReductionFactor);
-        that.gridFontSize = gridFontSizeScale(that.reductionFactor);
+        that.gridFontSize = gridFontSizeScale(that.reductionFactor) * this.initialGridFontSize;
 
         //Determine size of the data grid only (without labels)
         that.matrixWidth = (that.canvas.cell.width - that.widthReductionFactor) * that.column_objects.length;
@@ -402,7 +404,8 @@ var DIGViewer = function(containerDiv, userSettings) {
                 newData[rowKey][colKey] = d;
             }
             else {
-                throw Error("Multiple data objects for the same row/column combination.");
+                console.log(data);
+                throw Error("Multiple data objects for the same row/column combination: row '" + rowKey + "' col '" + colKey + "'");
             }
 
         });
