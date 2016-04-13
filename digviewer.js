@@ -278,8 +278,10 @@ var DIGViewer = function(containerDiv, userSettings) {
         var allSelected = true;
         that.svg.selectAll(".row").each(function(row) {
             matchingColumns.forEach(function(matchingColumn){
-                var currentCell = that.datasetsObj[row.id][matchingColumn.id];
-                if (!currentCell.selected) { allSelected = false; }
+                if (matchingColumn.id in that.datasetsObj[row.id]) {
+                    var currentCell = that.datasetsObj[row.id][matchingColumn.id];
+                    if (!currentCell.selected) { allSelected = false; }
+                }
             });
         });
       
@@ -288,7 +290,9 @@ var DIGViewer = function(containerDiv, userSettings) {
         
         that.svg.selectAll(".row").each(function(row) {
             matchingColumns.forEach(function(matchingColumn){
-                that.changeCellState(that.datasetsObj[row.id][matchingColumn.id], newState);
+                if (matchingColumn.id in that.datasetsObj[row.id]) {
+                    that.changeCellState(that.datasetsObj[row.id][matchingColumn.id], newState);
+                }
             });
         });
         
