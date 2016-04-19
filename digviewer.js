@@ -407,7 +407,6 @@ var DIGViewer = function(containerDiv, userSettings) {
                 newData[rowKey][colKey] = d;
             }
             else {
-                console.log(data);
                 throw Error("Multiple data objects for the same row/column combination: row '" + rowKey + "' col '" + colKey + "'");
             }
 
@@ -647,7 +646,7 @@ var DIGViewer = function(containerDiv, userSettings) {
             .each(function(p) {
                 var column_group = that.y_cat_function(p);
                 that._drawCurlyBracket(that.svg, maxPerCategory[p] + halfCellWidth + modfact - 2, -80, minPerCategory[p] - halfCellWidth + modfact + 2, -80);
-                that._writeBracketText(that.svg, minPerCategory[p], maxPerCategory[p], 90, halfCellWidth, that.column_group_label_function(column_group), p);
+                that._writeBracketText(that.svg, minPerCategory[p], maxPerCategory[p], 90, halfCellWidth, that.column_group_label_function(p), p);
             });
         
         d3.selectAll(".column_category")
