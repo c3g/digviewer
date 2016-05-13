@@ -1,7 +1,7 @@
 DIGViewer
 =========
 
-Usage example available here:   https://bitbucket.org/genap/digviewer/raw/master/demo.html
+Usage example available here: http://htmlpreview.github.io/?https://bitbucket.org/genap/digviewer/raw/master/demo.html
 
 Usage
 -----
