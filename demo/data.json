@@ -1,0 +1,9 @@
+[
+        {"celltype": 1, "assay": 1, "data": [{"name": "exp15", "ref_genome": "hg19"}]},
+        {"celltype": 1, "assay": 2, "data": [{"name": "exp01", "ref_genome": "hg19"}]},
+        {"celltype": 2, "assay": 1, "data": [{"name": "exp02", "ref_genome": "hg19"}, {"name": "exp03", "ref_genome": "hg38"}]},
+        {"celltype": 3, "assay": 2, "data": [{"name": "exp04", "ref_genome": "hg19"}, {"name": "exp05", "ref_genome": "hg38"}, {"name": "exp06", "ref_genome": "mm10"}]},
+        {"celltype": 4, "assay": 1, "data": [{"name": "exp07", "ref_genome": "hg19"}, {"name": "exp08", "ref_genome": "hg38"}]},
+        {"celltype": 5, "assay": 4, "data": [{"name": "exp09", "ref_genome": "hg19"}, {"name": "exp10", "ref_genome": "hg19"}]},
+        {"celltype": 6, "assay": 3, "data": [{"name": "exp11", "ref_genome": "mm10"}, {"name": "exp12", "ref_genome": "hg19"}, {"name": "exp13", "ref_genome": "hg38"}, {"name": "exp14", "ref_genome": "hg38"}]}
+]

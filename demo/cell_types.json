@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Blood"
+  },
+  {
+    "id": 2,
+    "name": "Brain"
+  },
+  {
+    "id": 3,
+    "name": "Liver"
+  },
+  {
+    "id": 4,
+    "name": "Kidney"
+  },
+  {
+    "id": 5,
+    "name": "Bone"
+  },
+  {
+    "id": 6,
+    "name": "Muscle"
+  }
+]

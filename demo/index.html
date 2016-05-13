@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
-    <script src="./digviewer.js" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="./digviewer.css">
+    <script src="../digviewer.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../digviewer.css">
 
     <style>
         body {
@@ -78,10 +78,10 @@
     ];
 
     assays = [
-        { id: 1, short_name: "wgs", name: "Whole-Genome Sequencing" },
-        { id: 2, short_name: "wgbs", name: "Bisulfite Sequencing" },
-        { id: 3, short_name: "rnas", name: "RNA-Seq" },
-        { id: 4, short_name: "450k", name: "Illumina 450K Chip" }
+        { id: 1, short_name: "wgs", name: "Whole-Genome Sequencing", category: "variants" },
+        { id: 2, short_name: "wgbs", name: "Bisulfite Sequencing", category: "methylome" },
+        { id: 3, short_name: "rnas", name: "RNA-Seq", category: "transcriptome" },
+        { id: 4, short_name: "450k", name: "Illumina 450K Chip", category: "methylome" }
     ];
 
     data = [

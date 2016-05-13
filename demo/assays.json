@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "short_name": "wgs",
+    "name": "Whole-Genome Sequencing"
+  },
+  {
+    "id": 2,
+    "short_name": "wgbs",
+    "name": "Bisulfite Sequencing"
+  },
+  {
+    "id": 3,
+    "short_name": "rnas",
+    "name": "RNA-Seq"
+  },
+  {
+    "id": 4,
+    "short_name": "450k",
+    "name": "Illumina 450K Chip"
+  }
+]
