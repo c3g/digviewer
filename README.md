@@ -1,7 +1,7 @@
 DIGViewer
 =========
 
-Usage example available here: http://epigenomesportal.ca/digviewer
+Usage example available here:   https://bitbucket.org/genap/digviewer/raw/master/demo.html
 
 Usage
 -----
