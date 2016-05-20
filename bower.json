@@ -1,0 +1,24 @@
+{
+  "name": "digviewer",
+  "main": "digviewer.js",
+  "authors": [
+    "dbujold <david.bujold@computationalgenomics.ca>"
+  ],
+  "description": "DIGViewer is a library to create data discovery grids, enabling navigation on datasets with multiple dimensions.",
+  "moduleType": [],
+  "keywords": [
+    "ui",
+    "grid",
+    "navigation"
+  ],
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/genap/digviewer",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
