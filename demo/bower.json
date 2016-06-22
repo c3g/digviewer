@@ -1,0 +1,7 @@
+{
+  "name": "DIGViewer Example",
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "requirejs-plugins": "^1.0.3"
+  }
+}
