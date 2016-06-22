@@ -3,7 +3,7 @@
  * DIGViewer is a grid to navigate through datasets, using multiple metadata dimensions.
  *
  * Copyright 2013-2016 McGill University.
- * Licensed under the LGPL license.
+ * Licensed under the MIT license.
  */
 
 /*jslint browser: true*/
@@ -245,8 +245,10 @@ var DIGViewer = function(containerDiv, userSettings) {
         //First check if all cells in the column are selected
         var allSelected = true;
         that.svg.selectAll(".row").each(function(rowData) {
-            if (typeof that.datasetsObj[rowData.id][colData.id] !== "undefined") {
-                if ((!that.datasetsObj[rowData.id][colData.id].selected)) { allSelected = false; }
+            if (typeof that.datasetsObj[rowData.id] !== "undefined") {
+                if (typeof that.datasetsObj[rowData.id][colData.id] !== "undefined") {
+                    if ((!that.datasetsObj[rowData.id][colData.id].selected)) { allSelected = false; }
+                }
             }
         });
       
@@ -254,8 +256,10 @@ var DIGViewer = function(containerDiv, userSettings) {
         var newState = !allSelected;
       
         that.svg.selectAll(".row").each(function(rowData) {
-            if (typeof that.datasetsObj[rowData.id][colData.id] !== "undefined") {
-                that.changeCellState(that.datasetsObj[rowData.id][colData.id], newState);
+            if (typeof that.datasetsObj[rowData.id] !== "undefined") {
+                if (typeof that.datasetsObj[rowData.id][colData.id] !== "undefined") {
+                    that.changeCellState(that.datasetsObj[rowData.id][colData.id], newState);
+                }
             }
         });
 
