@@ -482,7 +482,7 @@ var DIGViewer = function(containerDiv, userSettings) {
             .attr("class", "backgroundRow");
 
         //Rows labels
-        row.append("text")
+        var rowText = row.append("text")
             .attr("class", "rtext")
             .attr("x", -6)
             .attr("y", y.rangeBand() / 2)
@@ -494,12 +494,13 @@ var DIGViewer = function(containerDiv, userSettings) {
             .attr("style", function () {
                 return "font-size:" + that.gridFontSize + "em;";
             })
-            .attr("title", function (d, i) {
-                return that.row_objects[i].name;
-            })
             .on("click", that.selectRow)
             .on("mouseover", that._onRowMouseOver)
             .on("mouseout", that._onRowMouseOut);
+
+        rowText.append("svg:title").text(function (d, i) {
+                return that.row_label_function(d, i);
+            });
     };
 
 
@@ -556,17 +557,27 @@ var DIGViewer = function(containerDiv, userSettings) {
             })
             .attr("class", "backgroundColumn");
 
-        column.append("text")
+        var columnText = column.append("text")
             .attr("class", "ctext")
             .attr("x", 6)
             .attr("y", x.rangeBand() / 2)
             .attr("text-anchor", "start")
-            .text(function(d, i) { return that.column_label_function(d, i); })
+            .text(function(d, i) {
+                var text = that.column_label_function(d, i);
+                if (text.length > 10) {
+                    text = text.substring(0, 10) + "...";
+                }
+                return text;
+            })
             .attr("style", function(){return "font-size:" + that.gridFontSize + "em;";})
             .attr("dy", ".42em")
             .on("click", that.selectColumn)
             .on("mouseover", that._onColMouseOver)
   		    .on("mouseout", that._onColMouseOut);
+
+        columnText.append("svg:title").text(function (d, i) {
+            return that.column_label_function(d, i);
+        });
     };
 
 
@@ -655,8 +666,8 @@ var DIGViewer = function(containerDiv, userSettings) {
             .enter().append("g")
             .each(function(p) {
                 that.y_cat_function(p);
-                that._drawCurlyBracket(that.svg, maxPerCategory[p] + halfCellWidth + modfact - 2, -80, minPerCategory[p] - halfCellWidth + modfact + 2, -80);
-                that._writeBracketText(that.svg, minPerCategory[p], maxPerCategory[p], 90, halfCellWidth, that.column_group_label_function(p), p);
+                that._drawCurlyBracket(that.svg, maxPerCategory[p] + halfCellWidth + modfact - 2, -90, minPerCategory[p] - halfCellWidth + modfact + 2, -90);
+                that._writeBracketText(that.svg, minPerCategory[p], maxPerCategory[p], 100, halfCellWidth, that.column_group_label_function(p), p);
             });
         
         d3.selectAll(".column_category")
