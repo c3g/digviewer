@@ -440,7 +440,7 @@ var DIGViewer = function(containerDiv, userSettings) {
             .attr("transform", "translate(" + (that.canvas.row.labelWidth * 1.2) + "," + that.canvas.column.labelHeight + ")");
 
         //Main matrix background rectangle
-        var gridBackground = that.svg.append("rect")
+        that.svg.append("rect")
             .attr("class", "background cell_border")
             .attr("id", "gridBackground")
             .attr("width", that.matrixWidth)
@@ -654,7 +654,7 @@ var DIGViewer = function(containerDiv, userSettings) {
             .data(Object.keys(minPerCategory))
             .enter().append("g")
             .each(function(p) {
-                var column_group = that.y_cat_function(p);
+                that.y_cat_function(p);
                 that._drawCurlyBracket(that.svg, maxPerCategory[p] + halfCellWidth + modfact - 2, -80, minPerCategory[p] - halfCellWidth + modfact + 2, -80);
                 that._writeBracketText(that.svg, minPerCategory[p], maxPerCategory[p], 90, halfCellWidth, that.column_group_label_function(p), p);
             });
