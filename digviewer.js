@@ -32,7 +32,8 @@ var DIGViewer = function(containerDiv, userSettings) {
         },
         column: {
             labelOffset: 200,
-            labelHeight: 200
+            labelHeight: 200,
+            labelLength: 15             //How many characters in column titles before shortening to "..."
         },
         resize: {
             minColumns: 20,             //How many columns should there be in the grid to do a resize?
@@ -564,8 +565,8 @@ var DIGViewer = function(containerDiv, userSettings) {
             .attr("text-anchor", "start")
             .text(function(d, i) {
                 var text = that.column_label_function(d, i);
-                if (text.length > 10) {
-                    text = text.substring(0, 10) + "...";
+                if (text.length > that.canvas.column.labelLength) {
+                    text = text.substring(0, that.canvas.column.labelLength) + "...";
                 }
                 return text;
             })

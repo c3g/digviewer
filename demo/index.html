@@ -152,6 +152,8 @@
         onGridSelectionChanged: updateTable,
     });
 
+    digViewer.canvas.column.labelLength = 30;
+
     //Display grid in its container
     digViewer.drawGrid(data, cell_types, assays);
 
