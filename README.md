@@ -1,6 +1,8 @@
 DIGViewer
 =========
 
+Migrated from bitbucket: https://bitbucket.org/genap/digviewer/src/master/
+
 Usage example available here: http://htmlpreview.github.io/?https://bitbucket.org/genap/digviewer/raw/master/demo/index.html
 
 Usage
